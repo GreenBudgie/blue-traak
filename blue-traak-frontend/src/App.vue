@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import {RouterLink, RouterView} from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
-import {reactive, ref} from "vue";
-
-const testMessage = ref("Hi from frontend!!!!")
-
-getTestMessage()
-async function getTestMessage() {
-  const response = await fetch("api/test")
-  testMessage.value = await response.text()
-}
 </script>
 
 <template>
@@ -17,7 +8,7 @@ async function getTestMessage() {
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld :msg="testMessage" />
+      <HelloWorld msg="Message!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
