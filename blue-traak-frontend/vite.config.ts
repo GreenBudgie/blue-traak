@@ -10,7 +10,7 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineConfig({
   plugins: [
 		vue(),
-		vuetify({ autoImport: true }),
+		vuetify({ autoImport: true, styles: "expose" }),
 ],
   mode: "development",
   server: {
@@ -20,11 +20,6 @@ export default defineConfig({
         target: 'http://localhost:8091',
         changeOrigin: true
       },
-    }
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
